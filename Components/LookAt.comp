@@ -1,0 +1,23 @@
+{
+  "Title": "Look At",
+  "Description": null,
+  "Group": "Custom",
+  "Icon": null,
+  "Properties": [
+    {
+      "Id": 1,
+      "Type": "Sandbox.Game/Sandbox.GameObject",
+      "Access": "Public",
+      "Title": "Target"
+    },
+    {
+      "Id": 2,
+      "Type": "System.Private.CoreLib/System.Single",
+      "Access": "Public",
+      "Title": "Ease Rate"
+    }
+  ],
+  "Methods": [],
+  "BuildNumber": 103,
+  "__references": []
+}
