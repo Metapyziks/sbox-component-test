@@ -45,7 +45,7 @@
       "Name": "OnUpdate",
       "Body": {
         "Kind": "Action",
-        "Version": 3,
+        "Version": 4,
         "Variables": [],
         "Nodes": [
           {
@@ -67,8 +67,8 @@
             "Type": "call",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.IComponentLister",
-              "_name": "Get",
               "T": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Get",
               "_isStatic": false
             },
             "UserData": {
@@ -256,7 +256,7 @@
             "SrcId": 12,
             "SrcName": "_result",
             "DstId": 17,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 114,
@@ -303,13 +303,13 @@
           {
             "VarName": "_this",
             "DstId": 23,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 12,
             "SrcName": "_result",
             "DstId": 26,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 22,
@@ -382,7 +382,7 @@
       "Outputs": [],
       "Body": {
         "Kind": "Action",
-        "Version": 3,
+        "Version": 4,
         "Variables": [],
         "Nodes": [
           {
@@ -396,9 +396,9 @@
             "Id": 1,
             "Type": "call",
             "Properties": {
-              "_isStatic": false,
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_name": "TriggerJump",
-              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+              "_isStatic": false
             },
             "UserData": {
               "Position": "-128,-96"
@@ -408,8 +408,8 @@
             "Id": 2,
             "Type": "property.set",
             "Properties": {
-              "_name": "Velocity",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
             },
             "UserData": {
               "Position": "96,-96"
@@ -449,8 +449,8 @@
             "Id": 7,
             "Type": "property.set",
             "Properties": {
-              "_name": "IsOnGround",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "IsOnGround"
             },
             "UserData": {
               "Position": "320,-96"
@@ -460,10 +460,10 @@
             "Id": 8,
             "Type": "call",
             "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
               "T": "Sandbox.Game/Sandbox.CharacterController",
-              "_isStatic": false,
               "_name": "Get",
-              "_type": "Sandbox.Game/Sandbox.IComponentLister"
+              "_isStatic": false
             },
             "UserData": {
               "Position": "-160,96",
@@ -477,8 +477,8 @@
             "Type": "property.get",
             "ParentId": 8,
             "Properties": {
-              "_name": "Velocity",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
             },
             "UserData": {
               "Labels": {
@@ -490,10 +490,10 @@
             "Id": 10,
             "Type": "call",
             "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
               "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-              "_isStatic": false,
               "_name": "Get",
-              "_type": "Sandbox.Game/Sandbox.IComponentLister"
+              "_isStatic": false
             },
             "UserData": {
               "Position": "192,48",
@@ -526,13 +526,13 @@
             "SrcId": 8,
             "SrcName": "_result",
             "DstId": 2,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 3,
             "SrcName": "_result",
             "DstId": 2,
-            "DstName": "value"
+            "DstName": "_value"
           },
           {
             "SrcId": 9,
@@ -549,7 +549,7 @@
           {
             "VarName": "_this",
             "DstId": 4,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "Value": 0,
@@ -570,7 +570,7 @@
           {
             "VarName": "_this",
             "DstId": 6,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 2,
@@ -582,12 +582,12 @@
             "SrcId": 8,
             "SrcName": "_result",
             "DstId": 7,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "Value": false,
             "DstId": 7,
-            "DstName": "value"
+            "DstName": "_value"
           },
           {
             "VarName": "_this",
@@ -598,7 +598,7 @@
             "SrcId": 8,
             "SrcName": "_result",
             "DstId": 9,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "VarName": "_this",
@@ -618,7 +618,7 @@
       "Name": "OnStart",
       "Body": {
         "Kind": "Action",
-        "Version": 3,
+        "Version": 4,
         "Variables": [],
         "Nodes": [
           {
@@ -664,7 +664,7 @@
       "Outputs": [],
       "Body": {
         "Kind": "Action",
-        "Version": 3,
+        "Version": 4,
         "Variables": [],
         "Nodes": [
           {
@@ -675,18 +675,11 @@
             }
           },
           {
-            "Id": 1,
-            "Type": "output",
-            "UserData": {
-              "Position": "368,32"
-            }
-          },
-          {
             "Id": 2,
             "Type": "property.set",
             "Properties": {
-              "_name": "Velocity",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
             },
             "UserData": {
               "Position": "224,32"
@@ -736,10 +729,10 @@
             "Id": 8,
             "Type": "call",
             "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
               "T": "Sandbox.Game/Sandbox.CharacterController",
-              "_isStatic": false,
               "_name": "Get",
-              "_type": "Sandbox.Game/Sandbox.IComponentLister"
+              "_isStatic": false
             },
             "UserData": {
               "Position": "-0,-96",
@@ -753,8 +746,8 @@
             "Type": "property.get",
             "ParentId": 8,
             "Properties": {
-              "_name": "IsOnGround",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "IsOnGround"
             },
             "UserData": {
               "Labels": {
@@ -767,8 +760,8 @@
             "Type": "property.get",
             "ParentId": 8,
             "Properties": {
-              "_name": "Velocity",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
             },
             "UserData": {
               "Labels": {
@@ -779,12 +772,6 @@
         ],
         "Links": [
           {
-            "SrcId": 2,
-            "SrcName": "_signal",
-            "DstId": 1,
-            "DstName": "_signal"
-          },
-          {
             "SrcId": 0,
             "SrcName": "_signal",
             "DstId": 2,
@@ -794,13 +781,13 @@
             "SrcId": 8,
             "SrcName": "_result",
             "DstId": 2,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 3,
             "SrcName": "_result",
             "DstId": 2,
-            "DstName": "value"
+            "DstName": "_value"
           },
           {
             "SrcId": 10,
@@ -817,7 +804,7 @@
           {
             "VarName": "_this",
             "DstId": 4,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 6,
@@ -834,7 +821,7 @@
           {
             "VarName": "_this",
             "DstId": 6,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "VarName": "_this",
@@ -845,13 +832,13 @@
             "SrcId": 8,
             "SrcName": "_result",
             "DstId": 9,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 8,
             "SrcName": "_result",
             "DstId": 10,
-            "DstName": "target"
+            "DstName": "_target"
           }
         ],
         "UserData": {
@@ -869,7 +856,7 @@
       "Outputs": [],
       "Body": {
         "Kind": "Action",
-        "Version": 3,
+        "Version": 4,
         "Variables": [],
         "Nodes": [
           {
@@ -880,20 +867,13 @@
             }
           },
           {
-            "Id": 1,
-            "Type": "output",
-            "UserData": {
-              "Position": "368,80"
-            }
-          },
-          {
             "Id": 2,
             "Type": "call",
             "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
               "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
-              "_isStatic": false,
               "_name": "Get",
-              "_type": "Sandbox.Game/Sandbox.IComponentLister"
+              "_isStatic": false
             },
             "UserData": {
               "Position": "-96,32",
@@ -906,9 +886,9 @@
             "Id": 3,
             "Type": "call",
             "Properties": {
-              "_isStatic": false,
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_name": "WithVelocity",
-              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+              "_isStatic": false
             },
             "UserData": {
               "Position": "128,128"
@@ -918,8 +898,8 @@
             "Id": 4,
             "Type": "property.set",
             "Properties": {
-              "_name": "IsGrounded",
-              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+              "_name": "IsGrounded"
             },
             "UserData": {
               "Position": "-128,128"
@@ -929,10 +909,10 @@
             "Id": 5,
             "Type": "call",
             "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
               "T": "Sandbox.Game/Sandbox.CharacterController",
-              "_isStatic": false,
               "_name": "Get",
-              "_type": "Sandbox.Game/Sandbox.IComponentLister"
+              "_isStatic": false
             },
             "UserData": {
               "Position": "-96,-128",
@@ -946,8 +926,8 @@
             "Type": "property.get",
             "ParentId": 5,
             "Properties": {
-              "_name": "IsOnGround",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "IsOnGround"
             },
             "UserData": {
               "Labels": {
@@ -960,8 +940,8 @@
             "Type": "property.get",
             "ParentId": 5,
             "Properties": {
-              "_name": "Velocity",
-              "_type": "Sandbox.Game/Sandbox.CharacterController"
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
             },
             "UserData": {
               "Labels": {
@@ -971,12 +951,6 @@
           }
         ],
         "Links": [
-          {
-            "SrcId": 3,
-            "SrcName": "_signal",
-            "DstId": 1,
-            "DstName": "_signal"
-          },
           {
             "VarName": "_this",
             "DstId": 2,
@@ -1010,13 +984,13 @@
             "SrcId": 2,
             "SrcName": "_result",
             "DstId": 4,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 6,
             "SrcName": "_result",
             "DstId": 4,
-            "DstName": "value"
+            "DstName": "_value"
           },
           {
             "VarName": "_this",
@@ -1027,13 +1001,13 @@
             "SrcId": 5,
             "SrcName": "_result",
             "DstId": 6,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 5,
             "SrcName": "_result",
             "DstId": 7,
-            "DstName": "target"
+            "DstName": "_target"
           }
         ],
         "UserData": {
@@ -1062,7 +1036,7 @@
       ],
       "Body": {
         "Kind": "Expression",
-        "Version": 3,
+        "Version": 4,
         "Variables": [],
         "Nodes": [
           {
@@ -1144,8 +1118,8 @@
             "Type": "call",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.IComponentLister",
-              "_name": "Get",
               "T": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Get",
               "_isStatic": false
             },
             "UserData": {
@@ -1218,13 +1192,13 @@
           {
             "VarName": "_this",
             "DstId": 2,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 1,
             "SrcName": "_result",
             "DstId": 3,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 3,
@@ -1245,7 +1219,7 @@
             "SrcId": 1,
             "SrcName": "_result",
             "DstId": 5,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 5,
@@ -1262,7 +1236,7 @@
           {
             "VarName": "_this",
             "DstId": 7,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 4,
@@ -1285,13 +1259,13 @@
             "SrcId": 9,
             "SrcName": "_result",
             "DstId": 10,
-            "DstName": "target"
+            "DstName": "_target"
           },
           {
             "SrcId": 9,
             "SrcName": "_result",
             "DstId": 11,
-            "DstName": "target"
+            "DstName": "_target"
           }
         ],
         "UserData": {
@@ -1302,6 +1276,5 @@
       }
     }
   ],
-  "BuildNumber": 103,
   "__references": []
 }
