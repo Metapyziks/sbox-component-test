@@ -1,0 +1,57 @@
+{
+  "Title": "Player Controller",
+  "Description": null,
+  "Group": "Custom",
+  "Icon": null,
+  "Properties": [
+    {
+      "Id": 1,
+      "Type": "Single",
+      "Default": 250,
+      "Access": "Public",
+      "Title": "Walk Speed"
+    }
+  ],
+  "Methods": [
+    {
+      "$type": "Override",
+      "Name": "OnUpdate",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "On Update",
+          "id": "536d5394-68fb-4379-8f51-769aab59230e",
+          "ReferencedComponentTypes": []
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input"
+          },
+          {
+            "Id": 1,
+            "Type": "log.info",
+            "UserData": {
+              "Position": "224,32"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 1,
+            "DstName": "_signal"
+          },
+          {
+            "Value": "Hello!",
+            "DstId": 1,
+            "DstName": "format"
+          }
+        ]
+      }
+    }
+  ],
+  "__references": []
+}

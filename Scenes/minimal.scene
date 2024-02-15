@@ -148,6 +148,11 @@
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "components/playercontroller.comp",
+          "Id": "f500451f-1c8d-490e-8a0a-4614b6a8a2af",
+          "Property1": 250
         }
       ],
       "Children": [
@@ -183,6 +188,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-15T11:06:55.0424355\u002B00:00",
+  "LastSaved": "2024-02-15T11:10:40.5655221\u002B00:00",
   "__references": []
 }
