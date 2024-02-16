@@ -9,7 +9,6 @@
       "Components": [
         {
           "__type": "DirectionalLight",
-          "Id": "03d1582a-e262-4df0-9226-5abcabe26e6c",
           "FogMode": "Enabled",
           "FogStrength": 1,
           "LightColor": "0.91373,0.98039,1,1",
@@ -25,13 +24,11 @@
       "Components": [
         {
           "__type": "SkyBox2D",
-          "Id": "030e705f-8ac2-45f5-89a5-61ce236b60a5",
           "SkyMaterial": "materials/skybox/light_test_sky_sunny02.vmat",
           "Tint": "1,1,1,1"
         },
         {
           "__type": "EnvmapProbe",
-          "Id": "1c0edbab-a52e-4eae-94f3-ce225fc2008c",
           "Bounds": {
             "Mins": "-512,-512,-512",
             "Maxs": "512,512,512"
@@ -51,7 +48,6 @@
       "Components": [
         {
           "__type": "ModelRenderer",
-          "Id": "31856442-8e46-4625-a1ca-a1ffe61b3a62",
           "BodyGroups": 18446744073709551615,
           "MaterialGroup": null,
           "MaterialOverride": "materials/dev/dev_metal_rough50.vmat",
@@ -61,7 +57,6 @@
         },
         {
           "__type": "BoxCollider",
-          "Id": "6f9100a1-14c0-42a0-ae2f-0860bbe04473",
           "Center": "0,0,-25",
           "IsTrigger": false,
           "Scale": "100,100,50",
@@ -79,7 +74,6 @@
       "Components": [
         {
           "__type": "CameraComponent",
-          "Id": "dce501ed-797e-41a5-8990-455160eb6ddb",
           "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 60,
@@ -104,7 +98,6 @@
       "Components": [
         {
           "__type": "CharacterController",
-          "Id": "0e205dae-a71a-46d0-a25d-a1b2cf7c66ba",
           "Acceleration": 10,
           "Bounciness": 0.3,
           "GroundAngle": 45,
@@ -115,7 +108,6 @@
         },
         {
           "__type": "CitizenAnimationHelper",
-          "Id": "5387beb1-3fd3-453a-b85e-a285babcbd90",
           "BodyWeight": 1,
           "EyeSource": {
             "_type": "gameobject",
@@ -133,12 +125,11 @@
           "Target": {
             "_type": "component",
             "go": "541717e0-5983-4b8a-a82d-0fedc38f4554",
-            "component_id": "50bb763e-8088-44e3-9cae-1d7f5ce23897"
+            "component_type": "SkinnedModelRenderer"
           }
         },
         {
           "__type": "SkinnedModelRenderer",
-          "Id": "50bb763e-8088-44e3-9cae-1d7f5ce23897",
           "AnimationGraph": null,
           "BodyGroups": 341,
           "BoneMergeTarget": null,
@@ -151,7 +142,6 @@
         },
         {
           "__type": "components/playercontroller.comp",
-          "Id": "f500451f-1c8d-490e-8a0a-4614b6a8a2af",
           "Property1": 250
         }
       ],
@@ -188,6 +178,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-15T11:10:40.5655221\u002B00:00",
+  "LastSaved": "2024-02-16T09:48:05.9234975\u002B00:00",
   "__references": []
 }

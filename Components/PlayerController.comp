@@ -27,13 +27,36 @@
         "Nodes": [
           {
             "Id": 0,
-            "Type": "input"
+            "Type": "input",
+            "UserData": {
+              "Position": "-192,-32"
+            }
           },
           {
             "Id": 1,
             "Type": "log.info",
             "UserData": {
               "Position": "224,32"
+            }
+          },
+          {
+            "Id": 3,
+            "Type": "property.get",
+            "Properties": {
+              "_name": "GameObject",
+              "_type": "Component"
+            },
+            "UserData": {
+              "Position": "-48,48"
+            }
+          },
+          {
+            "Id": 4,
+            "Type": "property.get",
+            "ParentId": 3,
+            "Properties": {
+              "_name": "Name",
+              "_type": "GameObject"
             }
           }
         ],
@@ -45,9 +68,113 @@
             "DstName": "_signal"
           },
           {
-            "Value": "Hello!",
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 1,
+            "DstName": "args",
+            "DstIndex": 0
+          },
+          {
+            "Value": "Hello, {0}!",
             "DstId": 1,
             "DstName": "format"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 3,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_result",
+            "DstId": 4,
+            "DstName": "_target"
+          }
+        ]
+      }
+    },
+    {
+      "$type": "New",
+      "Id": 2,
+      "Access": "Public",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "Greet Me",
+          "id": "7f06a08d-9fae-4f16-919a-e3e46b65f229",
+          "ReferencedComponentTypes": []
+        },
+        "Parameters": {
+          "DefaultSignals": true
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input",
+            "UserData": {
+              "Position": "-128,-32"
+            }
+          },
+          {
+            "Id": 1,
+            "Type": "log.info",
+            "UserData": {
+              "Position": "128,-0"
+            }
+          },
+          {
+            "Id": 2,
+            "Type": "property.get",
+            "Properties": {
+              "_name": "GameObject",
+              "_type": "Component"
+            },
+            "UserData": {
+              "Position": "-144,48"
+            }
+          },
+          {
+            "Id": 3,
+            "Type": "property.get",
+            "ParentId": 2,
+            "Properties": {
+              "_name": "Name",
+              "_type": "GameObject"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 1,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_result",
+            "DstId": 1,
+            "DstName": "args",
+            "DstIndex": 0
+          },
+          {
+            "Value": "Hello, {0}!",
+            "DstId": 1,
+            "DstName": "format"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 2,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 3,
+            "DstName": "_target"
           }
         ]
       }
