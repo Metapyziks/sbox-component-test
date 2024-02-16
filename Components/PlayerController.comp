@@ -33,30 +33,14 @@
             }
           },
           {
-            "Id": 1,
-            "Type": "log.info",
-            "UserData": {
-              "Position": "224,32"
-            }
-          },
-          {
-            "Id": 3,
-            "Type": "property.get",
+            "Id": 5,
+            "Type": "call",
             "Properties": {
-              "_name": "GameObject",
-              "_type": "Component"
+              "_name": "Method2",
+              "_isStatic": false
             },
             "UserData": {
-              "Position": "-48,48"
-            }
-          },
-          {
-            "Id": 4,
-            "Type": "property.get",
-            "ParentId": 3,
-            "Properties": {
-              "_name": "Name",
-              "_type": "GameObject"
+              "Position": "64,-32"
             }
           }
         ],
@@ -64,31 +48,13 @@
           {
             "SrcId": 0,
             "SrcName": "_signal",
-            "DstId": 1,
+            "DstId": 5,
             "DstName": "_signal"
-          },
-          {
-            "SrcId": 4,
-            "SrcName": "_result",
-            "DstId": 1,
-            "DstName": "args",
-            "DstIndex": 0
-          },
-          {
-            "Value": "Hello, {0}!",
-            "DstId": 1,
-            "DstName": "format"
           },
           {
             "SrcId": 0,
             "SrcName": "_target",
-            "DstId": 3,
-            "DstName": "_target"
-          },
-          {
-            "SrcId": 3,
-            "SrcName": "_result",
-            "DstId": 4,
+            "DstId": 5,
             "DstName": "_target"
           }
         ]
