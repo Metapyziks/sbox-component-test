@@ -1,0 +1,232 @@
+{
+  "Title": "Look At",
+  "Description": null,
+  "Group": "Custom",
+  "Icon": null,
+  "Properties": [
+    {
+      "Id": 1,
+      "Type": "Sandbox.Game/Sandbox.GameObject",
+      "Access": "Public",
+      "Title": "Target"
+    }
+  ],
+  "Methods": [
+    {
+      "$type": "Override",
+      "Name": "OnUpdate",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "On Update",
+          "id": "1d554cad-6547-4a6a-aa9a-3c347bd9c425",
+          "ReferencedComponentTypes": []
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input",
+            "UserData": {
+              "Position": "16,64"
+            }
+          },
+          {
+            "Id": 1,
+            "Type": "if",
+            "UserData": {
+              "Position": "256,64"
+            }
+          },
+          {
+            "Id": 2,
+            "Type": "op.isnotnull",
+            "UserData": {
+              "Position": "32,128"
+            }
+          },
+          {
+            "Id": 4,
+            "Type": "property.get",
+            "ParentId": 2,
+            "Properties": {
+              "_name": "Property1"
+            }
+          },
+          {
+            "Id": 5,
+            "Type": "property.get",
+            "Properties": {
+              "_name": "Property1"
+            },
+            "UserData": {
+              "Position": "48,272"
+            }
+          },
+          {
+            "Id": 6,
+            "Type": "property.get",
+            "ParentId": 5,
+            "Properties": {
+              "_name": "Transform",
+              "_type": "Sandbox.Game/Sandbox.GameObject"
+            },
+            "UserData": {
+              "Visible": false
+            }
+          },
+          {
+            "Id": 7,
+            "Type": "property.get",
+            "ParentId": 6,
+            "Properties": {
+              "_name": "Position",
+              "_type": "Sandbox.Game/Sandbox.GameTransform"
+            }
+          },
+          {
+            "Id": 8,
+            "Type": "property.get",
+            "Properties": {
+              "_name": "Transform",
+              "_type": "Sandbox.Game/Sandbox.Component"
+            },
+            "UserData": {
+              "Position": "80,416",
+              "Labels": {
+                "_result": "transform"
+              }
+            }
+          },
+          {
+            "Id": 9,
+            "Type": "property.get",
+            "ParentId": 8,
+            "Properties": {
+              "_name": "Position",
+              "_type": "Sandbox.Game/Sandbox.GameTransform"
+            }
+          },
+          {
+            "Id": 10,
+            "Type": "op.subtract",
+            "UserData": {
+              "Position": "304,384"
+            }
+          },
+          {
+            "Id": 11,
+            "Type": "rotation.lookat",
+            "UserData": {
+              "Position": "480,320"
+            }
+          },
+          {
+            "Id": 12,
+            "Type": "property.set",
+            "Properties": {
+              "_name": "Rotation",
+              "_type": "Sandbox.Game/Sandbox.GameTransform"
+            },
+            "UserData": {
+              "Position": "736,192"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 1,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 1,
+            "DstName": "condition"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "input"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 4,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 5,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 6,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 6,
+            "SrcName": "_result",
+            "DstId": 7,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 8,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 8,
+            "SrcName": "_result",
+            "DstId": 9,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 7,
+            "SrcName": "_result",
+            "DstId": 10,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_result",
+            "DstId": 10,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 10,
+            "SrcName": "_result",
+            "DstId": 11,
+            "DstName": "forward"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "true",
+            "DstId": 12,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 8,
+            "SrcName": "_result",
+            "DstId": 12,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 11,
+            "SrcName": "_result",
+            "DstId": 12,
+            "DstName": "_value"
+          }
+        ]
+      }
+    }
+  ],
+  "__references": []
+}

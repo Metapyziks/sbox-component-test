@@ -6,10 +6,17 @@
   "Properties": [
     {
       "Id": 1,
-      "Type": "Single",
+      "Type": "System.Private.CoreLib/System.Single",
       "Default": 250,
       "Access": "Public",
       "Title": "Walk Speed"
+    },
+    {
+      "Id": 9,
+      "Type": "System.Private.CoreLib/System.Single",
+      "Default": 500,
+      "Access": "Public",
+      "Title": "Jump Velocity"
     }
   ],
   "Methods": [
@@ -29,32 +36,827 @@
             "Id": 0,
             "Type": "input",
             "UserData": {
-              "Position": "-192,-32"
+              "Position": "400,-0"
+            }
+          },
+          {
+            "Id": 1,
+            "Type": "call",
+            "Properties": {
+              "_isStatic": false,
+              "_name": "Method5"
+            },
+            "UserData": {
+              "Position": "80,48",
+              "Labels": {
+                "_out1": "wish dir"
+              }
+            }
+          },
+          {
+            "Id": 2,
+            "Type": "call",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
+              "_isStatic": false,
+              "_name": "Get",
+              "T": "Sandbox.Game/Sandbox.CharacterController"
+            },
+            "UserData": {
+              "Position": "224,-288",
+              "Labels": {
+                "_result": "character controller"
+              }
+            }
+          },
+          {
+            "Id": 3,
+            "Type": "call",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_isStatic": false,
+              "_name": "Accelerate"
+            },
+            "UserData": {
+              "Position": "-128,288"
+            }
+          },
+          {
+            "Id": 4,
+            "Type": "op.multiply",
+            "UserData": {
+              "Position": "672,-240",
+              "Labels": {
+                "_result": "wish vel"
+              }
             }
           },
           {
             "Id": 5,
+            "Type": "property.get",
+            "ParentId": 4,
+            "Properties": {
+              "_name": "Property1"
+            }
+          },
+          {
+            "Id": 6,
             "Type": "call",
             "Properties": {
-              "_name": "Method2",
-              "_isStatic": false
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_isStatic": false,
+              "_name": "Move"
             },
             "UserData": {
-              "Position": "64,-32"
+              "Position": "128,288"
+            }
+          },
+          {
+            "Id": 7,
+            "Type": "call",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
+              "_isStatic": false,
+              "_name": "Get",
+              "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+            },
+            "UserData": {
+              "Position": "272,-160",
+              "Labels": {
+                "_result": "animation helper"
+              }
+            }
+          },
+          {
+            "Id": 8,
+            "Type": "call",
+            "Properties": {
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+              "_isStatic": false,
+              "_name": "WithVelocity"
+            },
+            "UserData": {
+              "Position": "192,480"
+            }
+          },
+          {
+            "Id": 9,
+            "Type": "call",
+            "Properties": {
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+              "_isStatic": false,
+              "_name": "WithWishVelocity"
+            },
+            "UserData": {
+              "Position": "-80,480"
+            }
+          },
+          {
+            "Id": 10,
+            "Type": "property.get",
+            "ParentId": 2,
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
+            },
+            "UserData": {
+              "Labels": {
+                "_result": "velocity"
+              }
+            }
+          },
+          {
+            "Id": 11,
+            "Type": "call",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_isStatic": false,
+              "_name": "ApplyFriction"
+            },
+            "UserData": {
+              "Position": "688,368"
+            }
+          },
+          {
+            "Id": 14,
+            "Type": "property.get",
+            "ParentId": 1,
+            "Properties": {
+              "_type": "Sandbox.System/Vector3",
+              "_name": "Length"
+            }
+          },
+          {
+            "Id": 15,
+            "Type": "op.greaterthan",
+            "UserData": {
+              "Position": "368,96"
+            }
+          },
+          {
+            "Id": 16,
+            "Type": "if",
+            "UserData": {
+              "Position": "592,0",
+              "Labels": {
+                "_signal": "physics update"
+              }
+            }
+          },
+          {
+            "Id": 26,
+            "Type": "call",
+            "Properties": {
+              "_isStatic": false,
+              "_name": "Method8"
+            },
+            "UserData": {
+              "Position": "816,144"
+            }
+          },
+          {
+            "Id": 27,
+            "Type": "property.get",
+            "ParentId": 2,
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "IsOnGround"
+            },
+            "UserData": {
+              "Labels": {
+                "_result": "is grounded"
+              }
+            }
+          },
+          {
+            "Id": 28,
+            "Type": "if",
+            "UserData": {
+              "Position": "416,288",
+              "Labels": {
+                "_signal": "animation update"
+              }
+            }
+          },
+          {
+            "Id": 29,
+            "Type": "if",
+            "UserData": {
+              "Position": "944,368"
+            }
+          },
+          {
+            "Id": 30,
+            "Type": "input.pressed",
+            "UserData": {
+              "Position": "688,496"
+            }
+          },
+          {
+            "Id": 38,
+            "Type": "call",
+            "Properties": {
+              "_isStatic": false,
+              "_name": "Method10"
+            },
+            "UserData": {
+              "Position": "1200,368"
+            }
+          },
+          {
+            "Id": 49,
+            "Type": "call",
+            "Properties": {
+              "_isStatic": false,
+              "_name": "Method11"
+            },
+            "UserData": {
+              "Position": "-400,288"
+            }
+          },
+          {
+            "Id": 50,
+            "Type": "property.set",
+            "Properties": {
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+              "_name": "IsGrounded"
+            },
+            "UserData": {
+              "Position": "448,480"
             }
           }
         ],
         "Links": [
           {
             "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 1,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 2,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 49,
             "SrcName": "_signal",
-            "DstId": 5,
+            "DstId": 3,
             "DstName": "_signal"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 3,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 3,
+            "DstName": "vector"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "_out1",
+            "DstId": 4,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 4,
+            "DstName": "b"
           },
           {
             "SrcId": 0,
             "SrcName": "_target",
             "DstId": 5,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_signal",
+            "DstId": 6,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 6,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 7,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 10,
+            "SrcName": "_result",
+            "DstId": 8,
+            "DstName": "Velocity"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_signal",
+            "DstId": 8,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 7,
+            "SrcName": "_result",
+            "DstId": 8,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 9,
+            "DstName": "Velocity"
+          },
+          {
+            "SrcId": 28,
+            "SrcName": "_signal",
+            "DstId": 9,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 7,
+            "SrcName": "_result",
+            "DstId": 9,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 10,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 28,
+            "SrcName": "true",
+            "DstId": 11,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 11,
+            "DstName": "_target"
+          },
+          {
+            "Value": 10,
+            "DstId": 11,
+            "DstName": "frictionAmount"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "_out1",
+            "DstId": 14,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 14,
+            "SrcName": "_result",
+            "DstId": 15,
+            "DstName": "a"
+          },
+          {
+            "Value": {
+              "$type": "Simple",
+              "Type": "System.Private.CoreLib/System.Single",
+              "Value": 0.25
+            },
+            "DstId": 15,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 16,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 15,
+            "SrcName": "_result",
+            "DstId": 16,
+            "DstName": "condition"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "_out1",
+            "DstId": 26,
+            "DstName": "_in1"
+          },
+          {
+            "SrcId": 16,
+            "SrcName": "true",
+            "DstId": 26,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 26,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 27,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 6,
+            "SrcName": "_signal",
+            "DstId": 28,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 27,
+            "SrcName": "_result",
+            "DstId": 28,
+            "DstName": "condition"
+          },
+          {
+            "SrcId": 11,
+            "SrcName": "_signal",
+            "DstId": 29,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 30,
+            "SrcName": "_result",
+            "DstId": 29,
+            "DstName": "condition"
+          },
+          {
+            "Value": "Jump",
+            "DstId": 30,
+            "DstName": "action"
+          },
+          {
+            "SrcId": 29,
+            "SrcName": "true",
+            "DstId": 38,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 38,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 16,
+            "SrcName": "_signal",
+            "DstId": 49,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 49,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 8,
+            "SrcName": "_signal",
+            "DstId": 50,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 7,
+            "SrcName": "_result",
+            "DstId": 50,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 27,
+            "SrcName": "_result",
+            "DstId": 50,
+            "DstName": "_value"
+          }
+        ]
+      }
+    },
+    {
+      "$type": "New",
+      "Id": 5,
+      "Access": "Public",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "Get Wish Dir",
+          "id": "0bc002f4-d697-4db1-8116-03990e13d7f3",
+          "ReferencedComponentTypes": []
+        },
+        "Parameters": {
+          "Outputs": [
+            {
+              "Name": "_out1",
+              "Type": "Vector3",
+              "Display": {
+                "Title": "Direction",
+                "Hidden": false
+              }
+            }
+          ]
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input",
+            "UserData": {
+              "Position": "-320,-128"
+            }
+          },
+          {
+            "Id": 1,
+            "Type": "output",
+            "UserData": {
+              "Position": "704,64"
+            }
+          },
+          {
+            "Id": 2,
+            "Type": "input.analog.move",
+            "UserData": {
+              "Position": "-48,-128"
+            }
+          },
+          {
+            "Id": 3,
+            "Type": "property.get",
+            "Properties": {
+              "_type": "Component",
+              "_name": "Scene"
+            },
+            "UserData": {
+              "Position": "-496,48"
+            }
+          },
+          {
+            "Id": 4,
+            "Type": "property.get",
+            "ParentId": 3,
+            "Properties": {
+              "_type": "Scene",
+              "_name": "Camera"
+            },
+            "UserData": {
+              "Visible": false
+            }
+          },
+          {
+            "Id": 5,
+            "Type": "property.get",
+            "ParentId": 4,
+            "Properties": {
+              "_type": "Component",
+              "_name": "Transform"
+            },
+            "UserData": {
+              "Visible": false
+            }
+          },
+          {
+            "Id": 6,
+            "Type": "property.get",
+            "ParentId": 5,
+            "Properties": {
+              "_type": "GameTransform",
+              "_name": "Rotation"
+            },
+            "UserData": {
+              "Visible": false
+            }
+          },
+          {
+            "Id": 7,
+            "Type": "property.get",
+            "ParentId": 6,
+            "Properties": {
+              "_type": "Rotation",
+              "_name": "Forward"
+            }
+          },
+          {
+            "Id": 9,
+            "Type": "property.set",
+            "Properties": {
+              "_type": "Vector3",
+              "_name": "z"
+            },
+            "UserData": {
+              "Position": "-80,32"
+            }
+          },
+          {
+            "Id": 10,
+            "Type": "property.set",
+            "Properties": {
+              "_type": "Vector3",
+              "_name": "z"
+            },
+            "UserData": {
+              "Position": "-80,128"
+            }
+          },
+          {
+            "Id": 11,
+            "Type": "property.get",
+            "ParentId": 10,
+            "Properties": {
+              "_type": "Vector3",
+              "_name": "Normal"
+            }
+          },
+          {
+            "Id": 12,
+            "Type": "property.get",
+            "ParentId": 9,
+            "Properties": {
+              "_type": "Vector3",
+              "_name": "Normal"
+            }
+          },
+          {
+            "Id": 13,
+            "Type": "op.multiply",
+            "UserData": {
+              "Position": "288,32"
+            }
+          },
+          {
+            "Id": 14,
+            "Type": "property.get",
+            "ParentId": 2,
+            "Properties": {
+              "_type": "Vector3",
+              "_name": "x"
+            }
+          },
+          {
+            "Id": 15,
+            "Type": "property.get",
+            "ParentId": 2,
+            "Properties": {
+              "_type": "Vector3",
+              "_name": "y"
+            }
+          },
+          {
+            "Id": 17,
+            "Type": "op.multiply",
+            "UserData": {
+              "Position": "288,128"
+            }
+          },
+          {
+            "Id": 18,
+            "Type": "op.add",
+            "UserData": {
+              "Position": "480,96"
+            }
+          },
+          {
+            "Id": 33,
+            "Type": "property.get",
+            "ParentId": 6,
+            "Properties": {
+              "_type": "Rotation",
+              "_name": "Left"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 18,
+            "SrcName": "_result",
+            "DstId": 1,
+            "DstName": "_out1"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 3,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_result",
+            "DstId": 4,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 5,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 6,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 6,
+            "SrcName": "_result",
+            "DstId": 7,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 7,
+            "SrcName": "_result",
+            "DstId": 9,
+            "DstName": "_target"
+          },
+          {
+            "Value": 0,
+            "DstId": 9,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 33,
+            "SrcName": "_result",
+            "DstId": 10,
+            "DstName": "_target"
+          },
+          {
+            "Value": 0,
+            "DstId": 10,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 10,
+            "SrcName": "_result",
+            "DstId": 11,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_result",
+            "DstId": 12,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 14,
+            "SrcName": "_result",
+            "DstId": 13,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 12,
+            "SrcName": "_result",
+            "DstId": 13,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 14,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 15,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 15,
+            "SrcName": "_result",
+            "DstId": 17,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 11,
+            "SrcName": "_result",
+            "DstId": 17,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 13,
+            "SrcName": "_result",
+            "DstId": 18,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 17,
+            "SrcName": "_result",
+            "DstId": 18,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 6,
+            "SrcName": "_result",
+            "DstId": 33,
             "DstName": "_target"
           }
         ]
@@ -62,13 +864,152 @@
     },
     {
       "$type": "New",
-      "Id": 2,
+      "Id": 8,
       "Access": "Public",
       "Body": {
         "Version": 5,
         "UserData": {
-          "Title": "Greet Me",
-          "id": "7f06a08d-9fae-4f16-919a-e3e46b65f229",
+          "Title": "Rotate Towards",
+          "id": "fb72a24e-369c-4e0f-bbf0-72783edc4cf1",
+          "ReferencedComponentTypes": []
+        },
+        "Parameters": {
+          "Inputs": [
+            {
+              "Name": "_in1",
+              "Type": "Sandbox.System/Vector3",
+              "Display": {
+                "Title": "Direction",
+                "Hidden": false
+              },
+              "UsedBy": [
+                "_signal"
+              ]
+            }
+          ],
+          "DefaultSignals": true
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input",
+            "UserData": {
+              "Position": "-544,-128"
+            }
+          },
+          {
+            "Id": 1,
+            "Type": "property.get",
+            "Properties": {
+              "_name": "Transform",
+              "_type": "Sandbox.Game/Sandbox.Component"
+            },
+            "UserData": {
+              "Position": "-256,-32"
+            }
+          },
+          {
+            "Id": 2,
+            "Type": "property.set",
+            "Properties": {
+              "_name": "Rotation",
+              "_type": "Sandbox.Game/Sandbox.GameTransform"
+            },
+            "UserData": {
+              "Position": "288,0"
+            }
+          },
+          {
+            "Id": 3,
+            "Type": "rotation.lookat",
+            "UserData": {
+              "Position": "-288,64"
+            }
+          },
+          {
+            "Id": 4,
+            "Type": "property.get",
+            "ParentId": 1,
+            "Properties": {
+              "_name": "Rotation",
+              "_type": "Sandbox.Game/Sandbox.GameTransform"
+            }
+          },
+          {
+            "Id": 5,
+            "Type": "geom.slerp",
+            "UserData": {
+              "Position": "0,64"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 1,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 2,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_in1",
+            "DstId": 3,
+            "DstName": "forward"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "_result",
+            "DstId": 4,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 5,
+            "DstName": "a"
+          },
+          {
+            "Value": 0.25,
+            "DstId": 5,
+            "DstName": "amount"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_result",
+            "DstId": 5,
+            "DstName": "b"
+          }
+        ]
+      }
+    },
+    {
+      "$type": "New",
+      "Id": 10,
+      "Access": "Public",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "Jump",
+          "id": "2b49fd91-ea07-4f6d-b34b-e96696f552c1",
           "ReferencedComponentTypes": []
         },
         "Parameters": {
@@ -80,34 +1021,120 @@
             "Id": 0,
             "Type": "input",
             "UserData": {
-              "Position": "-128,-32"
+              "Position": "96,-32"
             }
           },
           {
             "Id": 1,
-            "Type": "log.info",
+            "Type": "property.set",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
+            },
             "UserData": {
-              "Position": "128,-0"
+              "Position": "400,-32"
             }
           },
           {
             "Id": 2,
-            "Type": "property.get",
-            "Properties": {
-              "_name": "GameObject",
-              "_type": "Component"
-            },
+            "Type": "op.add",
             "UserData": {
-              "Position": "-144,48"
+              "Position": "192,32"
             }
           },
           {
             "Id": 3,
+            "Type": "vec3.new",
+            "UserData": {
+              "Position": "-32,32"
+            }
+          },
+          {
+            "Id": 4,
             "Type": "property.get",
-            "ParentId": 2,
+            "ParentId": 3,
             "Properties": {
-              "_name": "Name",
-              "_type": "GameObject"
+              "_name": "Property9"
+            }
+          },
+          {
+            "Id": 5,
+            "Type": "call",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
+              "T": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Get",
+              "_isStatic": false
+            },
+            "UserData": {
+              "Position": "-0,-192",
+              "Labels": {
+                "_result": "character controller"
+              }
+            }
+          },
+          {
+            "Id": 6,
+            "Type": "property.get",
+            "ParentId": 5,
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
+            },
+            "UserData": {
+              "Labels": {
+                "_result": "velocity"
+              }
+            }
+          },
+          {
+            "Id": 7,
+            "Type": "property.get",
+            "ParentId": 5,
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "IsOnGround"
+            },
+            "UserData": {
+              "Labels": {
+                "_result": "is grounded"
+              }
+            }
+          },
+          {
+            "Id": 8,
+            "Type": "property.set",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "IsOnGround"
+            },
+            "UserData": {
+              "Position": "672,-32"
+            }
+          },
+          {
+            "Id": 9,
+            "Type": "call",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
+              "_isStatic": false,
+              "_name": "Get",
+              "T": "package.base/Sandbox.Citizen.CitizenAnimationHelper"
+            },
+            "UserData": {
+              "Position": "640,96"
+            }
+          },
+          {
+            "Id": 10,
+            "Type": "call",
+            "Properties": {
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
+              "_isStatic": false,
+              "_name": "TriggerJump"
+            },
+            "UserData": {
+              "Position": "944,32"
             }
           }
         ],
@@ -119,27 +1146,314 @@
             "DstName": "_signal"
           },
           {
-            "SrcId": 3,
+            "SrcId": 5,
             "SrcName": "_result",
             "DstId": 1,
-            "DstName": "args",
-            "DstIndex": 0
-          },
-          {
-            "Value": "Hello, {0}!",
-            "DstId": 1,
-            "DstName": "format"
-          },
-          {
-            "SrcId": 0,
-            "SrcName": "_target",
-            "DstId": 2,
             "DstName": "_target"
           },
           {
             "SrcId": 2,
             "SrcName": "_result",
+            "DstId": 1,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 6,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "b"
+          },
+          {
+            "Value": 0,
             "DstId": 3,
+            "DstName": "x"
+          },
+          {
+            "Value": 0,
+            "DstId": 3,
+            "DstName": "y"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 3,
+            "DstName": "z"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 4,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 6,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 7,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "_signal",
+            "DstId": 8,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 8,
+            "DstName": "_target"
+          },
+          {
+            "Value": false,
+            "DstId": 8,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 9,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 8,
+            "SrcName": "_signal",
+            "DstId": 10,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_result",
+            "DstId": 10,
+            "DstName": "_target"
+          }
+        ]
+      }
+    },
+    {
+      "$type": "New",
+      "Id": 11,
+      "Access": "Public",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "Fall",
+          "id": "e187764d-1546-41c4-95f4-3535247cc5eb",
+          "ReferencedComponentTypes": []
+        },
+        "Parameters": {
+          "DefaultSignals": true
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input",
+            "UserData": {
+              "Position": "96,-160"
+            }
+          },
+          {
+            "Id": 1,
+            "Type": "output",
+            "UserData": {
+              "Position": "544,-32"
+            }
+          },
+          {
+            "Id": 2,
+            "Type": "property.set",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
+            },
+            "UserData": {
+              "Position": "336,-32"
+            }
+          },
+          {
+            "Id": 3,
+            "Type": "op.add",
+            "UserData": {
+              "Position": "128,32"
+            }
+          },
+          {
+            "Id": 4,
+            "Type": "property.get",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.Component",
+              "_name": "Scene"
+            },
+            "UserData": {
+              "Position": "-336,0"
+            }
+          },
+          {
+            "Id": 5,
+            "Type": "property.get",
+            "ParentId": 4,
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.Scene",
+              "_name": "PhysicsWorld"
+            }
+          },
+          {
+            "Id": 6,
+            "Type": "property.get",
+            "ParentId": 5,
+            "Properties": {
+              "_type": "Sandbox.Engine/Sandbox.PhysicsWorld",
+              "_name": "Gravity"
+            }
+          },
+          {
+            "Id": 7,
+            "Type": "op.multiply",
+            "UserData": {
+              "Position": "-48,96"
+            }
+          },
+          {
+            "Id": 8,
+            "Type": "time.delta",
+            "UserData": {
+              "Position": "-256,128"
+            }
+          },
+          {
+            "Id": 9,
+            "Type": "call",
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.IComponentLister",
+              "T": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Get",
+              "_isStatic": false
+            },
+            "UserData": {
+              "Position": "-160,-128",
+              "Labels": {
+                "_result": "character controller"
+              }
+            }
+          },
+          {
+            "Id": 10,
+            "Type": "property.get",
+            "ParentId": 9,
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "Velocity"
+            },
+            "UserData": {
+              "Labels": {
+                "_result": "velocity"
+              }
+            }
+          },
+          {
+            "Id": 11,
+            "Type": "property.get",
+            "ParentId": 9,
+            "Properties": {
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
+              "_name": "IsOnGround"
+            },
+            "UserData": {
+              "Labels": {
+                "_result": "is grounded"
+              }
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 2,
+            "SrcName": "_signal",
+            "DstId": 1,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 2,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 10,
+            "SrcName": "_result",
+            "DstId": 3,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 7,
+            "SrcName": "_result",
+            "DstId": 3,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 4,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 5,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 6,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 6,
+            "SrcName": "_result",
+            "DstId": 7,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 8,
+            "SrcName": "_result",
+            "DstId": 7,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_result",
+            "DstId": 10,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_result",
+            "DstId": 11,
             "DstName": "_target"
           }
         ]
