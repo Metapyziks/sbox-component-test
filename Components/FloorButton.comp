@@ -1,0 +1,492 @@
+{
+  "Title": "Floor Button",
+  "Description": null,
+  "Group": "Custom",
+  "Icon": null,
+  "Properties": [
+    {
+      "Id": 1,
+      "Type": "Sandbox.Game/Sandbox.Collider",
+      "Access": "Public",
+      "Title": "Trigger"
+    },
+    {
+      "Id": 2,
+      "Type": "Sandbox.Game/Sandbox.GameObject",
+      "Access": "Public",
+      "Title": "Button"
+    },
+    {
+      "Id": 3,
+      "Type": "System.Private.CoreLib/System.Boolean",
+      "Access": "Public",
+      "Title": "Is Pressed"
+    },
+    {
+      "Id": 5,
+      "Type": "System.Private.CoreLib/System.Single",
+      "Default": 2,
+      "Access": "Public",
+      "Title": "Pressed Z"
+    },
+    {
+      "Id": 6,
+      "Type": "System.Private.CoreLib/System.Single",
+      "Default": 6,
+      "Access": "Public",
+      "Title": "Released Z"
+    }
+  ],
+  "Methods": [
+    {
+      "$type": "Override",
+      "Name": "OnUpdate",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "On Update",
+          "id": "ce262d00-6321-495d-8798-3c46205fbcf7",
+          "ReferencedComponentTypes": []
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input",
+            "UserData": {
+              "Position": "288,32"
+            }
+          },
+          {
+            "Id": 16,
+            "Type": "call",
+            "Properties": {
+              "_name": "Method4",
+              "_isStatic": false
+            },
+            "UserData": {
+              "Position": "480,32"
+            }
+          },
+          {
+            "Id": 17,
+            "Type": "property.get",
+            "Properties": {
+              "_name": "Property2"
+            },
+            "UserData": {
+              "Position": "-96,96"
+            }
+          },
+          {
+            "Id": 18,
+            "Type": "property.get",
+            "ParentId": 17,
+            "Properties": {
+              "_name": "Transform",
+              "_type": "Sandbox.Game/Sandbox.GameObject"
+            }
+          },
+          {
+            "Id": 20,
+            "Type": "property.get",
+            "ParentId": 18,
+            "Properties": {
+              "_name": "LocalPosition",
+              "_type": "Sandbox.Game/Sandbox.GameTransform"
+            }
+          },
+          {
+            "Id": 21,
+            "Type": "property.set",
+            "Properties": {
+              "_name": "LocalPosition",
+              "_type": "Sandbox.Game/Sandbox.GameTransform"
+            },
+            "UserData": {
+              "Position": "832,112"
+            }
+          },
+          {
+            "Id": 22,
+            "Type": "property.set",
+            "Properties": {
+              "_name": "z",
+              "_type": "Sandbox.System/Vector3"
+            },
+            "UserData": {
+              "Position": "240,256"
+            }
+          },
+          {
+            "Id": 24,
+            "Type": "op.conditional",
+            "UserData": {
+              "Position": "-0,240"
+            }
+          },
+          {
+            "Id": 26,
+            "Type": "property.get",
+            "ParentId": 24,
+            "Properties": {
+              "_name": "Property5"
+            }
+          },
+          {
+            "Id": 27,
+            "Type": "property.get",
+            "ParentId": 24,
+            "Properties": {
+              "_name": "Property6"
+            }
+          },
+          {
+            "Id": 28,
+            "Type": "property.get",
+            "ParentId": 24,
+            "Properties": {
+              "_name": "Property3"
+            }
+          },
+          {
+            "Id": 29,
+            "Type": "geom.lerp",
+            "UserData": {
+              "Position": "528,224"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 16,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 16,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 17,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 17,
+            "SrcName": "_result",
+            "DstId": 18,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 18,
+            "SrcName": "_result",
+            "DstId": 20,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 16,
+            "SrcName": "_signal",
+            "DstId": 21,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 18,
+            "SrcName": "_result",
+            "DstId": 21,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 29,
+            "SrcName": "_result",
+            "DstId": 21,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 20,
+            "SrcName": "_result",
+            "DstId": 22,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 24,
+            "SrcName": "_result",
+            "DstId": 22,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 26,
+            "SrcName": "_result",
+            "DstId": 24,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 27,
+            "SrcName": "_result",
+            "DstId": 24,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 28,
+            "SrcName": "_result",
+            "DstId": 24,
+            "DstName": "x"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 26,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 27,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 28,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 20,
+            "SrcName": "_result",
+            "DstId": 29,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 22,
+            "SrcName": "_result",
+            "DstId": 29,
+            "DstName": "b"
+          },
+          {
+            "Value": 0.125,
+            "DstId": 29,
+            "DstName": "frac"
+          }
+        ]
+      }
+    },
+    {
+      "$type": "New",
+      "Id": 4,
+      "Access": "Public",
+      "Body": {
+        "Version": 5,
+        "UserData": {
+          "Title": "Check Is Pressed",
+          "id": "86c2285a-7147-40f0-a1c1-31e764c03aae",
+          "ReferencedComponentTypes": []
+        },
+        "Parameters": {
+          "DefaultSignals": true
+        },
+        "Variables": [],
+        "Nodes": [
+          {
+            "Id": 0,
+            "Type": "input",
+            "UserData": {
+              "Position": "-800,-128"
+            }
+          },
+          {
+            "Id": 1,
+            "Type": "property.get",
+            "Properties": {
+              "_name": "Property1"
+            },
+            "UserData": {
+              "Position": "-544,-0"
+            }
+          },
+          {
+            "Id": 2,
+            "Type": "property.get",
+            "ParentId": 1,
+            "Properties": {
+              "_name": "Touching",
+              "_type": "Sandbox.Game/Sandbox.Collider"
+            }
+          },
+          {
+            "Id": 3,
+            "Type": "foreach",
+            "UserData": {
+              "Position": "-288,-0"
+            }
+          },
+          {
+            "Id": 4,
+            "Type": "property.get",
+            "ParentId": 3,
+            "Properties": {
+              "_name": "GameObject",
+              "_type": "Sandbox.Game/Sandbox.Component"
+            },
+            "UserData": {
+              "Visible": false
+            }
+          },
+          {
+            "Id": 5,
+            "Type": "property.get",
+            "ParentId": 4,
+            "Properties": {
+              "_name": "Tags",
+              "_type": "Sandbox.Game/Sandbox.GameObject"
+            }
+          },
+          {
+            "Id": 6,
+            "Type": "call",
+            "Properties": {
+              "_name": "Has",
+              "_type": "Sandbox.Game/Sandbox.GameTags",
+              "_isStatic": false
+            },
+            "UserData": {
+              "Position": "64,96"
+            }
+          },
+          {
+            "Id": 7,
+            "Type": "property.set",
+            "Properties": {
+              "_name": "Property3",
+              "_type": "components/floorbutton.comp"
+            },
+            "UserData": {
+              "Position": "544,96"
+            }
+          },
+          {
+            "Id": 8,
+            "Type": "if",
+            "UserData": {
+              "Position": "320,64"
+            }
+          },
+          {
+            "Id": 9,
+            "Type": "property.set",
+            "Properties": {
+              "_name": "Property3"
+            },
+            "UserData": {
+              "Position": "-512,-96"
+            }
+          }
+        ],
+        "Links": [
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 1,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 1,
+            "SrcName": "_result",
+            "DstId": 2,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 9,
+            "SrcName": "_signal",
+            "DstId": 3,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 2,
+            "SrcName": "_result",
+            "DstId": 3,
+            "DstName": "enumerable"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "body.value",
+            "DstId": 4,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 4,
+            "SrcName": "_result",
+            "DstId": 5,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 5,
+            "SrcName": "_result",
+            "DstId": 6,
+            "DstName": "_target"
+          },
+          {
+            "Value": true,
+            "DstId": 6,
+            "DstName": "includeAncestors"
+          },
+          {
+            "Value": "player",
+            "DstId": 6,
+            "DstName": "tag"
+          },
+          {
+            "SrcId": 8,
+            "SrcName": "true",
+            "DstId": 7,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 7,
+            "DstName": "_target"
+          },
+          {
+            "Value": true,
+            "DstId": 7,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "body",
+            "DstId": 8,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 6,
+            "SrcName": "_result",
+            "DstId": 8,
+            "DstName": "condition"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 9,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 9,
+            "DstName": "_target"
+          },
+          {
+            "Value": false,
+            "DstId": 9,
+            "DstName": "_value"
+          }
+        ]
+      }
+    }
+  ],
+  "__references": []
+}

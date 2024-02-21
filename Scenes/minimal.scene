@@ -103,7 +103,8 @@
     {
       "Id": "541717e0-5983-4b8a-a82d-0fedc38f4554",
       "Name": "Player",
-      "Position": "-0.554985,-1.544464,-0.0002492374",
+      "Position": "241.6949,-1.544464,-0.0002492374",
+      "Tags": "player",
       "Enabled": true,
       "Components": [
         {
@@ -154,6 +155,14 @@
           "__type": "components/playercontroller.comp",
           "Property1": 250,
           "Property9": 500
+        },
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,36",
+          "IsTrigger": false,
+          "Scale": "25,25,72",
+          "Static": false,
+          "Surface": null
         }
       ],
       "Children": [
@@ -162,6 +171,249 @@
           "Name": "Eyes",
           "Position": "0,0,64",
           "Enabled": true
+        }
+      ]
+    },
+    {
+      "Id": "f8021477-bbd7-466f-b15f-ccc546b0b84e",
+      "Name": "floor_button",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "BoxCollider",
+          "Center": "0,0,16",
+          "IsTrigger": true,
+          "Scale": "50,50,25",
+          "Static": false,
+          "Surface": null
+        },
+        {
+          "__type": "components/floorbutton.comp",
+          "Property1": {
+            "_type": "component",
+            "go": "f8021477-bbd7-466f-b15f-ccc546b0b84e",
+            "component_type": "BoxCollider"
+          },
+          "Property2": {
+            "_type": "gameobject",
+            "go": "ceffc530-8cb2-4360-aa25-93e45dcb8324"
+          },
+          "Property3": false,
+          "Property5": 2,
+          "Property6": 6
+        },
+        {
+          "__type": "UpdateActionComponent",
+          "Action": {
+            "Version": 5,
+            "UserData": {
+              "Title": "Action",
+              "id": "63b88df7-eff6-4737-a912-57f5a48bf292",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "400,16"
+                }
+              },
+              {
+                "Id": 10,
+                "Type": "op.conditional",
+                "UserData": {
+                  "Position": "240,208"
+                }
+              },
+              {
+                "Id": 36,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Tint",
+                  "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                },
+                "UserData": {
+                  "Position": "640,96"
+                }
+              },
+              {
+                "Id": 45,
+                "Type": "geom.lerp",
+                "UserData": {
+                  "Position": "432,208"
+                }
+              },
+              {
+                "Id": 51,
+                "Type": "scene.ref",
+                "Properties": {
+                  "T": "components/floorbutton.comp",
+                  "value": {
+                    "_type": "component",
+                    "go": "f8021477-bbd7-466f-b15f-ccc546b0b84e",
+                    "component_type": "components/floorbutton.comp"
+                  }
+                },
+                "UserData": {
+                  "Position": "-16,160"
+                }
+              },
+              {
+                "Id": 52,
+                "Type": "property.get",
+                "ParentId": 51,
+                "Properties": {
+                  "_name": "Property3",
+                  "_type": "components/floorbutton.comp"
+                }
+              },
+              {
+                "Id": 54,
+                "Type": "scene.ref",
+                "Properties": {
+                  "T": "Sandbox.Game/Sandbox.ModelRenderer",
+                  "value": {
+                    "_type": "component",
+                    "go": "6ad70641-3c6c-4402-9c85-9a4969af4764",
+                    "component_type": "ModelRenderer"
+                  }
+                },
+                "UserData": {
+                  "Position": "48,48"
+                }
+              },
+              {
+                "Id": 55,
+                "Type": "property.get",
+                "ParentId": 54,
+                "Properties": {
+                  "_name": "Tint",
+                  "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "Value": {
+                  "$type": "Simple",
+                  "Type": "Sandbox.System/Color",
+                  "Value": "0.1,1,0,1"
+                },
+                "DstId": 10,
+                "DstName": "a"
+              },
+              {
+                "Value": {
+                  "$type": "Simple",
+                  "Type": "Sandbox.System/Color",
+                  "Value": "1,0,0,1"
+                },
+                "DstId": 10,
+                "DstName": "b"
+              },
+              {
+                "SrcId": 52,
+                "SrcName": "_result",
+                "DstId": 10,
+                "DstName": "x"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 36,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 54,
+                "SrcName": "_result",
+                "DstId": 36,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 45,
+                "SrcName": "_result",
+                "DstId": 36,
+                "DstName": "_value"
+              },
+              {
+                "SrcId": 55,
+                "SrcName": "_result",
+                "DstId": 45,
+                "DstName": "a"
+              },
+              {
+                "SrcId": 10,
+                "SrcName": "_result",
+                "DstId": 45,
+                "DstName": "b"
+              },
+              {
+                "Value": 0.12,
+                "DstId": 45,
+                "DstName": "frac"
+              },
+              {
+                "SrcId": 51,
+                "SrcName": "_result",
+                "DstId": 52,
+                "DstName": "_target"
+              },
+              {
+                "SrcId": 54,
+                "SrcName": "_result",
+                "DstId": 55,
+                "DstName": "_target"
+              }
+            ]
+          }
+        }
+      ],
+      "Children": [
+        {
+          "Id": "cfb8dccd-6b44-4409-a650-f99141dcfa1f",
+          "Name": "Base",
+          "Position": "0,0,1.6",
+          "Scale": "1.125,1.125,0.0625",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "BoxCollider",
+              "Center": "0,0,10",
+              "IsTrigger": false,
+              "Scale": "50,50,75",
+              "Static": false,
+              "Surface": null
+            }
+          ]
+        },
+        {
+          "Id": "ceffc530-8cb2-4360-aa25-93e45dcb8324",
+          "Name": "Button",
+          "Position": "0,0,6",
+          "Scale": "1,1,0.125",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "ModelRenderer",
+              "BodyGroups": 18446744073709551615,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "1,0.10698,0.10698,1"
+            }
+          ]
         }
       ]
     }
@@ -189,6 +441,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-02-20T14:04:40.5491612\u002B00:00",
+  "LastSaved": "2024-02-21T11:09:03.4856902\u002B00:00",
   "__references": []
 }
