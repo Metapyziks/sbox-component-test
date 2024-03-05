@@ -122,7 +122,7 @@
             "Id": 24,
             "Type": "op.conditional",
             "UserData": {
-              "Position": "-0,240"
+              "Position": "-0,480"
             }
           },
           {

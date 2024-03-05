@@ -17,6 +17,19 @@
       "Default": 500,
       "Access": "Public",
       "Title": "Jump Velocity"
+    },
+    {
+      "Id": 16,
+      "Type": "Sandbox.System/Vector3",
+      "Access": "Public",
+      "Title": "testing"
+    },
+    {
+      "Id": 17,
+      "Type": "System.Private.CoreLib/System.Single",
+      "Default": 0.25,
+      "Access": "Public",
+      "Title": "Rotate Speed"
     }
   ],
   "Methods": [
@@ -73,12 +86,12 @@
             "Id": 3,
             "Type": "call",
             "Properties": {
-              "_type": "Sandbox.Game/Sandbox.CharacterController",
               "_isStatic": false,
+              "_type": "Sandbox.Game/Sandbox.CharacterController",
               "_name": "Accelerate"
             },
             "UserData": {
-              "Position": "-128,288"
+              "Position": "-160,288"
             }
           },
           {
@@ -131,20 +144,20 @@
             "Id": 8,
             "Type": "call",
             "Properties": {
-              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_isStatic": false,
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_name": "WithVelocity"
             },
             "UserData": {
-              "Position": "192,480"
+              "Position": "-64,576"
             }
           },
           {
             "Id": 9,
             "Type": "call",
             "Properties": {
-              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_isStatic": false,
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_name": "WithWishVelocity"
             },
             "UserData": {
@@ -282,7 +295,14 @@
               "_name": "IsGrounded"
             },
             "UserData": {
-              "Position": "448,480"
+              "Position": "-80,672"
+            }
+          },
+          {
+            "Id": 51,
+            "Type": "all",
+            "UserData": {
+              "Position": "-400,448"
             }
           }
         ],
@@ -360,8 +380,8 @@
             "DstName": "Velocity"
           },
           {
-            "SrcId": 9,
-            "SrcName": "_signal",
+            "SrcId": 51,
+            "SrcName": "body",
             "DstId": 8,
             "DstName": "_signal"
           },
@@ -378,8 +398,8 @@
             "DstName": "Velocity"
           },
           {
-            "SrcId": 28,
-            "SrcName": "_signal",
+            "SrcId": 51,
+            "SrcName": "body",
             "DstId": 9,
             "DstName": "_signal"
           },
@@ -523,8 +543,8 @@
             "DstName": "_target"
           },
           {
-            "SrcId": 8,
-            "SrcName": "_signal",
+            "SrcId": 51,
+            "SrcName": "body",
             "DstId": 50,
             "DstName": "_signal"
           },
@@ -539,6 +559,12 @@
             "SrcName": "_result",
             "DstId": 50,
             "DstName": "_value"
+          },
+          {
+            "SrcId": 28,
+            "SrcName": "_signal",
+            "DstId": 51,
+            "DstName": "_signal"
           }
         ]
       }
@@ -902,8 +928,8 @@
             "Id": 1,
             "Type": "property.get",
             "Properties": {
-              "_name": "Transform",
-              "_type": "Sandbox.Game/Sandbox.Component"
+              "_type": "Sandbox.Game/Sandbox.Component",
+              "_name": "Transform"
             },
             "UserData": {
               "Position": "-256,-32"
@@ -913,8 +939,8 @@
             "Id": 2,
             "Type": "property.set",
             "Properties": {
-              "_name": "Rotation",
-              "_type": "Sandbox.Game/Sandbox.GameTransform"
+              "_type": "Sandbox.Game/Sandbox.GameTransform",
+              "_name": "Rotation"
             },
             "UserData": {
               "Position": "288,0"
@@ -924,7 +950,7 @@
             "Id": 3,
             "Type": "rotation.lookat",
             "UserData": {
-              "Position": "-288,64"
+              "Position": "-256,80"
             }
           },
           {
@@ -932,8 +958,8 @@
             "Type": "property.get",
             "ParentId": 1,
             "Properties": {
-              "_name": "Rotation",
-              "_type": "Sandbox.Game/Sandbox.GameTransform"
+              "_type": "Sandbox.Game/Sandbox.GameTransform",
+              "_name": "Rotation"
             }
           },
           {
@@ -941,6 +967,14 @@
             "Type": "geom.slerp",
             "UserData": {
               "Position": "0,64"
+            }
+          },
+          {
+            "Id": 10,
+            "Type": "property.get",
+            "ParentId": 5,
+            "Properties": {
+              "_name": "Property17"
             }
           }
         ],
@@ -988,7 +1022,8 @@
             "DstName": "a"
           },
           {
-            "Value": 0.25,
+            "SrcId": 10,
+            "SrcName": "_result",
             "DstId": 5,
             "DstName": "amount"
           },
@@ -997,6 +1032,12 @@
             "SrcName": "_result",
             "DstId": 5,
             "DstName": "b"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 10,
+            "DstName": "_target"
           }
         ]
       }
@@ -1458,6 +1499,13 @@
           }
         ]
       }
+    }
+  ],
+  "Events": [
+    {
+      "Id": 18,
+      "Inputs": [],
+      "Title": "Jumped"
     }
   ],
   "__references": []
