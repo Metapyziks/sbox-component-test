@@ -1170,12 +1170,24 @@
             "Id": 10,
             "Type": "call",
             "Properties": {
-              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_isStatic": false,
+              "_type": "package.base/Sandbox.Citizen.CitizenAnimationHelper",
               "_name": "TriggerJump"
             },
             "UserData": {
-              "Position": "944,32"
+              "Position": "1072,16"
+            }
+          },
+          {
+            "Id": 11,
+            "Type": "call",
+            "Properties": {
+              "_isStatic": false,
+              "_type": "components/playercontroller.comp",
+              "_name": "Dispatch_Event18"
+            },
+            "UserData": {
+              "Position": "1392,16"
             }
           }
         ],
@@ -1277,6 +1289,18 @@
             "SrcId": 9,
             "SrcName": "_result",
             "DstId": 10,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 10,
+            "SrcName": "_signal",
+            "DstId": 11,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 11,
             "DstName": "_target"
           }
         ]

@@ -153,7 +153,44 @@
         },
         {
           "__type": "components/playercontroller.comp",
+          "Event18": {
+            "Version": 5,
+            "UserData": {
+              "Title": "Jumped",
+              "id": "7b42ffd4-7ee9-4b39-8d11-a4bd8b25f23e",
+              "ReferencedComponentTypes": []
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "log.info",
+                "UserData": {
+                  "Position": "208,0"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 1,
+                "DstName": "_signal"
+              },
+              {
+                "Value": "I jumped!",
+                "DstId": 1,
+                "DstName": "format"
+              }
+            ]
+          },
           "Property1": 250,
+          "Property16": "0,0,0",
+          "Property17": 0.25,
           "Property9": 500
         },
         {
@@ -231,8 +268,8 @@
                 "Id": 36,
                 "Type": "property.set",
                 "Properties": {
-                  "_name": "Tint",
-                  "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                  "_type": "Sandbox.Game/Sandbox.ModelRenderer",
+                  "_name": "Tint"
                 },
                 "UserData": {
                   "Position": "640,96"
@@ -439,6 +476,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-01T14:45:27.7141804\u002B00:00",
+  "LastSaved": "2024-03-06T11:02:06.6525491\u002B00:00",
   "__references": []
 }

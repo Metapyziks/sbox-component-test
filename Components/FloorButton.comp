@@ -75,7 +75,7 @@
               "_name": "Property2"
             },
             "UserData": {
-              "Position": "-96,96"
+              "Position": "-112,80"
             }
           },
           {
@@ -294,7 +294,7 @@
             "Id": 0,
             "Type": "input",
             "UserData": {
-              "Position": "-800,-128"
+              "Position": "-800,-96"
             }
           },
           {
@@ -349,8 +349,8 @@
             "Type": "call",
             "Properties": {
               "_name": "Has",
-              "_type": "Sandbox.Game/Sandbox.GameTags",
-              "_isStatic": false
+              "_isStatic": false,
+              "_type": "Sandbox.Game/Sandbox.GameTags"
             },
             "UserData": {
               "Position": "64,96"
@@ -486,6 +486,18 @@
           }
         ]
       }
+    }
+  ],
+  "Events": [
+    {
+      "Id": 7,
+      "Inputs": [],
+      "Title": "Pressed"
+    },
+    {
+      "Id": 8,
+      "Inputs": [],
+      "Title": "Released"
     }
   ],
   "__references": []
