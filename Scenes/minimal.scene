@@ -226,6 +226,157 @@
         },
         {
           "__type": "components/floorbutton.comp",
+          "Event7": {
+            "Version": 5,
+            "UserData": {
+              "Title": "Pressed",
+              "id": "eaf05f9e-0d93-4432-8ea5-343c8a4afd1a",
+              "ReferencedComponentTypes": [
+                "Sandbox.Game/Sandbox.ModelRenderer"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input",
+                "UserData": {
+                  "Position": "80,0"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "337f8f40-1261-43ab-b199-153dcec68f96"
+                  }
+                },
+                "UserData": {
+                  "Position": "16,48"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "scene.get",
+                "ParentId": 2,
+                "Properties": {
+                  "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                }
+              },
+              {
+                "Id": 4,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Tint",
+                  "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                },
+                "UserData": {
+                  "Position": "336,80"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 4,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 3,
+                "SrcName": "_result",
+                "DstId": 4,
+                "DstName": "_target"
+              },
+              {
+                "Value": "0.1,1,0,1",
+                "DstId": 4,
+                "DstName": "_value"
+              }
+            ]
+          },
+          "Event8": {
+            "Version": 5,
+            "UserData": {
+              "Title": "Released",
+              "id": "c181c0c0-ea6b-45df-a0c0-3fa0bda22a3d",
+              "ReferencedComponentTypes": [
+                "Sandbox.Game/Sandbox.ModelRenderer"
+              ]
+            },
+            "Variables": [],
+            "Nodes": [
+              {
+                "Id": 0,
+                "Type": "input"
+              },
+              {
+                "Id": 1,
+                "Type": "scene.ref",
+                "Properties": {
+                  "gameobject": {
+                    "_type": "gameobject",
+                    "go": "337f8f40-1261-43ab-b199-153dcec68f96"
+                  }
+                },
+                "UserData": {
+                  "Position": "-32,64"
+                }
+              },
+              {
+                "Id": 2,
+                "Type": "scene.get",
+                "ParentId": 1,
+                "Properties": {
+                  "T": "Sandbox.Game/Sandbox.ModelRenderer"
+                }
+              },
+              {
+                "Id": 3,
+                "Type": "property.set",
+                "Properties": {
+                  "_name": "Tint",
+                  "_type": "Sandbox.Game/Sandbox.ModelRenderer"
+                },
+                "UserData": {
+                  "Position": "288,96"
+                }
+              }
+            ],
+            "Links": [
+              {
+                "SrcId": 1,
+                "SrcName": "_result",
+                "DstId": 2,
+                "DstName": "_this"
+              },
+              {
+                "SrcId": 0,
+                "SrcName": "_signal",
+                "DstId": 3,
+                "DstName": "_signal"
+              },
+              {
+                "SrcId": 2,
+                "SrcName": "_result",
+                "DstId": 3,
+                "DstName": "_target"
+              },
+              {
+                "Value": "1,0,0,1",
+                "DstId": 3,
+                "DstName": "_value"
+              }
+            ]
+          },
           "Property1": {
             "_type": "component",
             "go": "f8021477-bbd7-466f-b15f-ccc546b0b84e",
@@ -238,171 +389,6 @@
           "Property3": false,
           "Property5": 2,
           "Property6": 6
-        },
-        {
-          "__type": "UpdateActionComponent",
-          "Action": {
-            "Version": 5,
-            "UserData": {
-              "Title": "Action",
-              "id": "63b88df7-eff6-4737-a912-57f5a48bf292",
-              "ReferencedComponentTypes": []
-            },
-            "Variables": [],
-            "Nodes": [
-              {
-                "Id": 0,
-                "Type": "input",
-                "UserData": {
-                  "Position": "400,16"
-                }
-              },
-              {
-                "Id": 10,
-                "Type": "op.conditional",
-                "UserData": {
-                  "Position": "240,208"
-                }
-              },
-              {
-                "Id": 36,
-                "Type": "property.set",
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                  "_name": "Tint"
-                },
-                "UserData": {
-                  "Position": "640,96"
-                }
-              },
-              {
-                "Id": 45,
-                "Type": "geom.lerp",
-                "UserData": {
-                  "Position": "432,208"
-                }
-              },
-              {
-                "Id": 57,
-                "Type": "scene.ref",
-                "Properties": {
-                  "component": {
-                    "_type": "component",
-                    "go": "f8021477-bbd7-466f-b15f-ccc546b0b84e",
-                    "component_type": "components/floorbutton.comp"
-                  }
-                },
-                "UserData": {
-                  "Position": "-176,224"
-                }
-              },
-              {
-                "Id": 58,
-                "Type": "property.get",
-                "ParentId": 57,
-                "Properties": {
-                  "_name": "Property3",
-                  "_type": "components/floorbutton.comp"
-                }
-              },
-              {
-                "Id": 62,
-                "Type": "scene.ref",
-                "Properties": {
-                  "component": {
-                    "_type": "component",
-                    "go": "6ad70641-3c6c-4402-9c85-9a4969af4764",
-                    "component_type": "ModelRenderer"
-                  }
-                },
-                "UserData": {
-                  "Position": "160,64"
-                }
-              },
-              {
-                "Id": 63,
-                "Type": "property.get",
-                "ParentId": 62,
-                "Properties": {
-                  "_type": "Sandbox.Game/Sandbox.ModelRenderer",
-                  "_name": "Tint"
-                }
-              }
-            ],
-            "Links": [
-              {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": "Sandbox.System/Color",
-                  "Value": "0.1,1,0,1"
-                },
-                "DstId": 10,
-                "DstName": "a"
-              },
-              {
-                "Value": {
-                  "$type": "Simple",
-                  "Type": "Sandbox.System/Color",
-                  "Value": "1,0,0,1"
-                },
-                "DstId": 10,
-                "DstName": "b"
-              },
-              {
-                "SrcId": 58,
-                "SrcName": "_result",
-                "DstId": 10,
-                "DstName": "x"
-              },
-              {
-                "SrcId": 0,
-                "SrcName": "_signal",
-                "DstId": 36,
-                "DstName": "_signal"
-              },
-              {
-                "SrcId": 62,
-                "SrcName": "_result",
-                "DstId": 36,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 45,
-                "SrcName": "_result",
-                "DstId": 36,
-                "DstName": "_value"
-              },
-              {
-                "SrcId": 63,
-                "SrcName": "_result",
-                "DstId": 45,
-                "DstName": "a"
-              },
-              {
-                "SrcId": 10,
-                "SrcName": "_result",
-                "DstId": 45,
-                "DstName": "b"
-              },
-              {
-                "Value": 0.12,
-                "DstId": 45,
-                "DstName": "frac"
-              },
-              {
-                "SrcId": 57,
-                "SrcName": "_result",
-                "DstId": 58,
-                "DstName": "_target"
-              },
-              {
-                "SrcId": 62,
-                "SrcName": "_result",
-                "DstId": 63,
-                "DstName": "_target"
-              }
-            ]
-          }
         }
       ],
       "Children": [
@@ -451,6 +437,23 @@
           ]
         }
       ]
+    },
+    {
+      "Id": "337f8f40-1261-43ab-b199-153dcec68f96",
+      "Name": "Cube",
+      "Position": "23.20896,105.082,42.46978",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ModelRenderer",
+          "BodyGroups": 18446744073709551615,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -476,6 +479,6 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-03-06T11:02:06.6525491\u002B00:00",
+  "LastSaved": "2024-03-06T11:22:21.9159439\u002B00:00",
   "__references": []
 }

@@ -288,13 +288,18 @@
         "Parameters": {
           "DefaultSignals": true
         },
-        "Variables": [],
+        "Variables": [
+          {
+            "Name": "was pressed",
+            "Type": "System.Private.CoreLib/System.Boolean"
+          }
+        ],
         "Nodes": [
           {
             "Id": 0,
             "Type": "input",
             "UserData": {
-              "Position": "-800,-96"
+              "Position": "-944,-96"
             }
           },
           {
@@ -304,7 +309,7 @@
               "_name": "Property1"
             },
             "UserData": {
-              "Position": "-544,-0"
+              "Position": "-1120,32"
             }
           },
           {
@@ -320,7 +325,10 @@
             "Id": 3,
             "Type": "foreach",
             "UserData": {
-              "Position": "-288,-0"
+              "Position": "-832,16",
+              "Labels": {
+                "_signal": "dispatch events"
+              }
             }
           },
           {
@@ -353,7 +361,7 @@
               "_type": "Sandbox.Game/Sandbox.GameTags"
             },
             "UserData": {
-              "Position": "64,96"
+              "Position": "-480,112"
             }
           },
           {
@@ -364,14 +372,14 @@
               "_type": "components/floorbutton.comp"
             },
             "UserData": {
-              "Position": "544,96"
+              "Position": "32,80"
             }
           },
           {
             "Id": 8,
             "Type": "if",
             "UserData": {
-              "Position": "320,64"
+              "Position": "-224,80"
             }
           },
           {
@@ -381,7 +389,89 @@
               "_name": "Property3"
             },
             "UserData": {
-              "Position": "-512,-96"
+              "Position": "-512,-96",
+              "Labels": {
+                "_signal": "check for press"
+              }
+            }
+          },
+          {
+            "Id": 12,
+            "Type": "var.set",
+            "Properties": {
+              "_var": "was pressed"
+            },
+            "UserData": {
+              "Position": "-704,-96"
+            }
+          },
+          {
+            "Id": 13,
+            "Type": "property.get",
+            "ParentId": 12,
+            "Properties": {
+              "_name": "Property3"
+            }
+          },
+          {
+            "Id": 14,
+            "Type": "if",
+            "UserData": {
+              "Position": "-784,240"
+            }
+          },
+          {
+            "Id": 15,
+            "Type": "op.notequal",
+            "UserData": {
+              "Position": "-976,288"
+            }
+          },
+          {
+            "Id": 16,
+            "Type": "property.get",
+            "ParentId": 15,
+            "Properties": {
+              "_name": "Property3"
+            }
+          },
+          {
+            "Id": 17,
+            "Type": "if",
+            "UserData": {
+              "Position": "-496,304"
+            }
+          },
+          {
+            "Id": 18,
+            "Type": "property.get",
+            "ParentId": 17,
+            "Properties": {
+              "_name": "Property3"
+            }
+          },
+          {
+            "Id": 19,
+            "Type": "call",
+            "Properties": {
+              "_name": "Dispatch_Event7",
+              "_isStatic": false,
+              "_type": "components/floorbutton.comp"
+            },
+            "UserData": {
+              "Position": "-240,304"
+            }
+          },
+          {
+            "Id": 20,
+            "Type": "call",
+            "Properties": {
+              "_isStatic": false,
+              "_name": "Dispatch_Event8",
+              "_type": "components/floorbutton.comp"
+            },
+            "UserData": {
+              "Position": "-240,352"
             }
           }
         ],
@@ -468,7 +558,7 @@
             "DstName": "condition"
           },
           {
-            "SrcId": 0,
+            "SrcId": 12,
             "SrcName": "_signal",
             "DstId": 9,
             "DstName": "_signal"
@@ -483,6 +573,95 @@
             "Value": false,
             "DstId": 9,
             "DstName": "_value"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_signal",
+            "DstId": 12,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 13,
+            "SrcName": "_result",
+            "DstId": 12,
+            "DstName": "_value"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 13,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 3,
+            "SrcName": "_signal",
+            "DstId": 14,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 15,
+            "SrcName": "_result",
+            "DstId": 14,
+            "DstName": "condition"
+          },
+          {
+            "VarName": "was pressed",
+            "DstId": 15,
+            "DstName": "a"
+          },
+          {
+            "SrcId": 16,
+            "SrcName": "_result",
+            "DstId": 15,
+            "DstName": "b"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 16,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 14,
+            "SrcName": "true",
+            "DstId": 17,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 18,
+            "SrcName": "_result",
+            "DstId": 17,
+            "DstName": "condition"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 18,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 17,
+            "SrcName": "true",
+            "DstId": 19,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 19,
+            "DstName": "_target"
+          },
+          {
+            "SrcId": 17,
+            "SrcName": "false",
+            "DstId": 20,
+            "DstName": "_signal"
+          },
+          {
+            "SrcId": 0,
+            "SrcName": "_target",
+            "DstId": 20,
+            "DstName": "_target"
           }
         ]
       }
