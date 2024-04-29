@@ -279,10 +279,8 @@
       "Id": 4,
       "Access": "Public",
       "Body": {
-        "Version": 5,
         "UserData": {
           "Title": "Check Is Pressed",
-          "id": "86c2285a-7147-40f0-a1c1-31e764c03aae",
           "ReferencedComponentTypes": []
         },
         "Parameters": {
@@ -304,7 +302,7 @@
           },
           {
             "Id": 1,
-            "Type": "property.get",
+            "Type": "property",
             "Properties": {
               "_name": "Property1"
             },
@@ -314,7 +312,7 @@
           },
           {
             "Id": 2,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 1,
             "Properties": {
               "_name": "Touching",
@@ -333,7 +331,7 @@
           },
           {
             "Id": 4,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 3,
             "Properties": {
               "_name": "GameObject",
@@ -345,7 +343,7 @@
           },
           {
             "Id": 5,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 4,
             "Properties": {
               "_name": "Tags",
@@ -366,7 +364,7 @@
           },
           {
             "Id": 7,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_name": "Property3",
               "_type": "components/floorbutton.comp"
@@ -384,7 +382,7 @@
           },
           {
             "Id": 9,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_name": "Property3"
             },
@@ -397,7 +395,7 @@
           },
           {
             "Id": 12,
-            "Type": "var.set",
+            "Type": "var",
             "Properties": {
               "_var": "was pressed"
             },
@@ -407,7 +405,7 @@
           },
           {
             "Id": 13,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 12,
             "Properties": {
               "_name": "Property3"
@@ -429,7 +427,7 @@
           },
           {
             "Id": 16,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 15,
             "Properties": {
               "_name": "Property3"
@@ -444,7 +442,7 @@
           },
           {
             "Id": 18,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 17,
             "Properties": {
               "_name": "Property3"
@@ -663,7 +661,9 @@
             "DstId": 20,
             "DstName": "_target"
           }
-        ]
+        ],
+        "__guid": "86c2285a-7147-40f0-a1c1-31e764c03aae",
+        "__version": 6
       }
     }
   ],
@@ -679,5 +679,7 @@
       "Title": "Released"
     }
   ],
+  "ResourceVersion": 0,
+  "__version": 0,
   "__references": []
 }

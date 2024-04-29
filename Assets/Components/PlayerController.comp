@@ -568,10 +568,8 @@
       "Id": 5,
       "Access": "Public",
       "Body": {
-        "Version": 5,
         "UserData": {
           "Title": "Get Wish Dir",
-          "id": "0bc002f4-d697-4db1-8116-03990e13d7f3",
           "ReferencedComponentTypes": []
         },
         "Parameters": {
@@ -611,7 +609,7 @@
           },
           {
             "Id": 3,
-            "Type": "property.get",
+            "Type": "property",
             "Properties": {
               "_type": "Component",
               "_name": "Scene"
@@ -622,7 +620,7 @@
           },
           {
             "Id": 4,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 3,
             "Properties": {
               "_type": "Scene",
@@ -634,7 +632,7 @@
           },
           {
             "Id": 5,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 4,
             "Properties": {
               "_type": "Component",
@@ -646,7 +644,7 @@
           },
           {
             "Id": 6,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 5,
             "Properties": {
               "_type": "GameTransform",
@@ -658,7 +656,7 @@
           },
           {
             "Id": 7,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 6,
             "Properties": {
               "_type": "Rotation",
@@ -667,7 +665,7 @@
           },
           {
             "Id": 9,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_type": "Vector3",
               "_name": "z"
@@ -678,7 +676,7 @@
           },
           {
             "Id": 10,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_type": "Vector3",
               "_name": "z"
@@ -689,7 +687,7 @@
           },
           {
             "Id": 11,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 10,
             "Properties": {
               "_type": "Vector3",
@@ -698,7 +696,7 @@
           },
           {
             "Id": 12,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 9,
             "Properties": {
               "_type": "Vector3",
@@ -714,7 +712,7 @@
           },
           {
             "Id": 14,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 2,
             "Properties": {
               "_type": "Vector3",
@@ -723,7 +721,7 @@
           },
           {
             "Id": 15,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 2,
             "Properties": {
               "_type": "Vector3",
@@ -746,7 +744,7 @@
           },
           {
             "Id": 33,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 6,
             "Properties": {
               "_type": "Rotation",
@@ -815,13 +813,13 @@
           },
           {
             "SrcId": 10,
-            "SrcName": "_result",
+            "SrcName": "_target",
             "DstId": 11,
             "DstName": "_target"
           },
           {
             "SrcId": 9,
-            "SrcName": "_result",
+            "SrcName": "_target",
             "DstId": 12,
             "DstName": "_target"
           },
@@ -879,7 +877,9 @@
             "DstId": 33,
             "DstName": "_target"
           }
-        ]
+        ],
+        "__guid": "0bc002f4-d697-4db1-8116-03990e13d7f3",
+        "__version": 6
       }
     },
     {
@@ -887,10 +887,8 @@
       "Id": 8,
       "Access": "Public",
       "Body": {
-        "Version": 5,
         "UserData": {
           "Title": "Rotate Towards",
-          "id": "fb72a24e-369c-4e0f-bbf0-72783edc4cf1",
           "ReferencedComponentTypes": []
         },
         "Parameters": {
@@ -920,7 +918,7 @@
           },
           {
             "Id": 1,
-            "Type": "property.get",
+            "Type": "property",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.Component",
               "_name": "Transform"
@@ -931,7 +929,7 @@
           },
           {
             "Id": 2,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.GameTransform",
               "_name": "Rotation"
@@ -949,7 +947,7 @@
           },
           {
             "Id": 4,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 1,
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.GameTransform",
@@ -965,7 +963,7 @@
           },
           {
             "Id": 10,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 5,
             "Properties": {
               "_name": "Property17"
@@ -1033,7 +1031,9 @@
             "DstId": 10,
             "DstName": "_target"
           }
-        ]
+        ],
+        "__guid": "fb72a24e-369c-4e0f-bbf0-72783edc4cf1",
+        "__version": 6
       }
     },
     {
@@ -1041,10 +1041,8 @@
       "Id": 10,
       "Access": "Public",
       "Body": {
-        "Version": 5,
         "UserData": {
           "Title": "Jump",
-          "id": "2b49fd91-ea07-4f6d-b34b-e96696f552c1",
           "ReferencedComponentTypes": []
         },
         "Parameters": {
@@ -1061,7 +1059,7 @@
           },
           {
             "Id": 1,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.CharacterController",
               "_name": "Velocity"
@@ -1086,7 +1084,7 @@
           },
           {
             "Id": 4,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 3,
             "Properties": {
               "_name": "Property9"
@@ -1110,7 +1108,7 @@
           },
           {
             "Id": 6,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 5,
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.CharacterController",
@@ -1124,7 +1122,7 @@
           },
           {
             "Id": 7,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 5,
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.CharacterController",
@@ -1138,7 +1136,7 @@
           },
           {
             "Id": 8,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.CharacterController",
               "_name": "IsOnGround"
@@ -1297,7 +1295,9 @@
             "DstId": 11,
             "DstName": "_target"
           }
-        ]
+        ],
+        "__guid": "2b49fd91-ea07-4f6d-b34b-e96696f552c1",
+        "__version": 6
       }
     },
     {
@@ -1305,10 +1305,8 @@
       "Id": 11,
       "Access": "Public",
       "Body": {
-        "Version": 5,
         "UserData": {
           "Title": "Fall",
-          "id": "e187764d-1546-41c4-95f4-3535247cc5eb",
           "ReferencedComponentTypes": []
         },
         "Parameters": {
@@ -1332,7 +1330,7 @@
           },
           {
             "Id": 2,
-            "Type": "property.set",
+            "Type": "property",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.CharacterController",
               "_name": "Velocity"
@@ -1350,7 +1348,7 @@
           },
           {
             "Id": 4,
-            "Type": "property.get",
+            "Type": "property",
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.Component",
               "_name": "Scene"
@@ -1361,7 +1359,7 @@
           },
           {
             "Id": 5,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 4,
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.Scene",
@@ -1370,7 +1368,7 @@
           },
           {
             "Id": 6,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 5,
             "Properties": {
               "_type": "Sandbox.Engine/Sandbox.PhysicsWorld",
@@ -1409,7 +1407,7 @@
           },
           {
             "Id": 10,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 9,
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.CharacterController",
@@ -1423,7 +1421,7 @@
           },
           {
             "Id": 11,
-            "Type": "property.get",
+            "Type": "property",
             "ParentId": 9,
             "Properties": {
               "_type": "Sandbox.Game/Sandbox.CharacterController",
@@ -1515,7 +1513,9 @@
             "DstId": 11,
             "DstName": "_target"
           }
-        ]
+        ],
+        "__guid": "e187764d-1546-41c4-95f4-3535247cc5eb",
+        "__version": 6
       }
     }
   ],
@@ -1526,5 +1526,7 @@
       "Title": "Jumped"
     }
   ],
+  "ResourceVersion": 0,
+  "__version": 0,
   "__references": []
 }

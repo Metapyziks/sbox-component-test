@@ -228,5 +228,8 @@
       }
     }
   ],
+  "Events": [],
+  "ResourceVersion": 0,
+  "__version": 0,
   "__references": []
 }
