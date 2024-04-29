@@ -356,8 +356,8 @@
             "Id": 6,
             "Type": "call",
             "Properties": {
-              "_name": "Has",
               "_isStatic": false,
+              "_name": "Has",
               "_type": "Sandbox.Game/Sandbox.GameTags"
             },
             "UserData": {
@@ -439,7 +439,7 @@
             "Id": 17,
             "Type": "if",
             "UserData": {
-              "Position": "-496,304"
+              "Position": "-448,320"
             }
           },
           {
@@ -454,12 +454,12 @@
             "Id": 19,
             "Type": "call",
             "Properties": {
-              "_name": "Dispatch_Event7",
               "_isStatic": false,
+              "_name": "Dispatch_Event7",
               "_type": "components/floorbutton.comp"
             },
             "UserData": {
-              "Position": "-240,304"
+              "Position": "-176,208"
             }
           },
           {
@@ -471,7 +471,7 @@
               "_type": "components/floorbutton.comp"
             },
             "UserData": {
-              "Position": "-240,352"
+              "Position": "-208,512"
             }
           }
         ],

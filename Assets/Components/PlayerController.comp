@@ -19,12 +19,6 @@
       "Title": "Jump Velocity"
     },
     {
-      "Id": 16,
-      "Type": "Sandbox.System/Vector3",
-      "Access": "Public",
-      "Title": "testing"
-    },
-    {
       "Id": 17,
       "Type": "System.Private.CoreLib/System.Single",
       "Default": 0.25,
